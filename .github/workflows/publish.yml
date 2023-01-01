@@ -1,0 +1,30 @@
+name: Docker publish Image
+on: 
+  push:
+    branches:
+      - "main"
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+
+
+  publish-evote-backend-userservice-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.SECRET_TOKEN }}
+      - name: Build the evote-backend-userservice Docker image
+        run: |
+          docker build . --tag ghcr.io/RajithaFernando/evote-backend-userservice:latest
+          docker run ghcr.io/RajithaFernando/evote-backend-userservice:latest
+          docker push ghcr.io/RajithaFernando/evote-backend-userservice:latest
