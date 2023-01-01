@@ -24,6 +24,6 @@ jobs:
           password: ${{ secrets.SECRET_TOKEN }}
       - name: Build the evote-backend-userservice Docker image
         run: |
-          docker build . --tag ghcr.io/RajithaFernando/evote-backend-userservice:latest
-          docker run ghcr.io/RajithaFernando/evote-backend-userservice:latest
-          docker push ghcr.io/RajithaFernando/evote-backend-userservice:latest
+          docker build . --tag ghcr.io/rajithafernando/evote-backend-userservice:latest
+          docker run ghcr.io/rajithafernando/evote-backend-userservice:latest
+          docker push ghcr.io/rajithafernando/evote-backend-userservice:latest
