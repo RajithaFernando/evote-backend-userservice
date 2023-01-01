@@ -25,4 +25,5 @@ jobs:
       - name: Build the evote-backend-userservice Docker image
         run: |
           docker build . --file Dockerfile --tag evote-backend-userservice:latest
+          docker tag evote-backend-userservice gcr.io/rajithafernando/evote-backend-userservice
           docker push ghcr.io/rajithafernando/evote-backend-userservice:latest
