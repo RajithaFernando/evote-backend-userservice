@@ -1,0 +1,32 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p a3ViZUNBMB4XDTIzMDExNDE4MzM1MVoXDTMzMDExMjE4MzM1MVowFTETMBEGA1UE AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKzh Po7iFp8WWww9kxihLhswbhDnw/Yq/NFvaxLblwBwhbTgB2TpGGY5u3kdAYa1owDN aBWRtOee9RJCS7RG1Yv2Sfg5k3r1S5fxGOsoX3lxIY0LzUHZx4bNyVO5dlZx511N 3/TMADTO1CLBmcCElcYUtmJai2q31faDKaqrHKU41dB0z/GE79FOZx1C98TRf9TS +Ib/1/Wg4UH/O1ShnNErSx9+lHwBLzkJgEh3Th0qhZbC0si4SBt1LxVNsZEqhZq7 TeNA8V4lzLbUaD+wd7ywG+vz6DNbvvCdtZt7sB/S1ejQHyZY4bvGsUCrf8M8n2z4 BlAImSv9Sj/kic4ywmsCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW BBTxuJfAFFUgWIPQzgrGVFMkqBMD3zANBgkqhkiG9w0BAQsFAAOCAQEAqsuA83eK 4Wx/oC6+yNQZeSy059BCGiEhBYlOGHrcrU/TFgQTnP/g6QjlTMTzbUdDj0m0R3jx cJEF7vbvZSDiLcPVx2rb9MFMK8zB/KEqWHcO4X9ctrRpSt8rnXxH8AADgHqCKi9V lZmmG2US/Bk8rRCJugKCk/ybdyotl6iKXf37WpfvAZZHRN3gUdS/QRtR20/pJ5YG 0dqFaqJy71Irhctkm9hm/nI1zd/n3hC7Tar/k/JQs1MFQFNdkaRXZ1/AIb11yzwF hA6YwKjnBLrGv/B+L4YSZCFiV5g7nkLMGujnXt+QbML+zSh9HLUH+9oFVx5/YCZ2 9AfapkcWOOeFxg==
+    extensions:
+    - extension:
+        last-update: Mon, 16 Jan 2023 07:09:31 UTC
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: cluster_info
+    server: https://192.168.49.2:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Mon, 16 Jan 2023 07:09:31 UTC
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /home/ec2-user/.minikube/profiles/minikube/client.crt
+    client-key: /home/ec2-user/.minikube/profiles/minikube/client.key
