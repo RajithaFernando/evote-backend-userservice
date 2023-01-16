@@ -5,19 +5,16 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Running Tests\" && mocha test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BuildForSDG/Team-040.git"
-  },
+ 
   "keywords": [
     "api",
     "e-voting",
     "voting",
     "app",
-    "andela",
-    "facebook"
+    "rajitha",
+    "fernando"
   ],
   "author": "Team-40",
   "license": "ISC",
@@ -29,5 +26,8 @@
     "jsonwebtoken": "^9.0.0",
     "nodemon": "^2.0.4",
     "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
   }
 }

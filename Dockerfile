@@ -11,6 +11,8 @@ WORKDIR /opt/app
 
 RUN npm install
 
+RUN npm test
+
 
 CMD node index.js
 
