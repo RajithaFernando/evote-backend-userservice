@@ -1,0 +1,236 @@
+
+
+git init 
+git branch -M main
+
+git add index.js
+git commit -m "first commit"
+
+git remote add origin https://github.com/RajithaFernando/evote-backend-userservice.git
+
+git push -u origin main
+
+
+# On Linux
+sudo yum update
+
+
+
+
+To create your Amazon EKS cluster role in the IAM console
+Open the IAM console at https://console.aws.amazon.com/iam/.
+
+Choose Roles, then Create role.
+
+Under Trusted entity type, select AWS service.
+
+From the Use cases for other AWS services dropdown list, choose EKS.
+
+Choose EKS - Cluster for your use case, and then choose Next.
+
+On the Add permissions tab, choose Next.
+
+For Role name, enter a unique name for your role, such as eksClusterRole.
+
+For Description, enter descriptive text such as Amazon EKS - Cluster role.
+
+Choose Create role.
+
+
+
+
+
+https://storage.googleapis.com/kubernetes-release/release/stable.txt
+
+
+# Download kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# Veryfy kubectl
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+
+# Install Kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+
+#  Check Kubectl installed succesfully
+kubectl version --client
+
+
+# Install Docker
+sudo amazon-linux-extras install docker
+
+# Start Docker
+sudo service docker start
+
+# Enable Docker at system startup
+sudo systemctl enable docker 
+
+# Add ec2-user to docker group
+sudo usermod -a -G docker ec2-user
+
+
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+sudo chown ec2-user /usr/local/bin/minikube
+
+
+
+# exit and come again
+
+minikube start --vm-driver=docker
+
+kubectl config get-contexts
+
+https://dev.to/aws-builders/jenkins-installation-configuration-on-aws-ec2-linux-instance-3npl
+
+# Check Java
+java -version
+
+# If not avilable Install java
+sudo yum install java-1.8.0-openjdk
+
+
+# download the latest Jenkins package
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+
+
+# To enable the installation of the package, import the key file from Jenkins-CI
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+
+# Install Jenkins on the EC2 instance
+sudo yum install jenkins
+
+
+# Start jenkins
+sudo service jenkins start
+
+/usr/bin/java
+
+
+# THIS WORKED
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+
+
+sudo amazon-linux-extras install java-openjdk11
+
+Port Tunnel 
+ssh -i MiniKubeKeyPair.pem -L 8080:127.0.0.1:8080 ec2-user@172-31-26-165
+
+
+
+# ADDING jenkins user to docker group and restarting jenkins  to take effect
+sudo usermod -a -G docker jenkins
+sudo service jenkins restart
+
+
+# Git installation on AWS EC2 instance:
+
+#Perform a quick update on your instance:
+sudo yum update -y
+ 
+#Install git in your EC2 instance
+sudo yum install git -y
+
+#Check git version
+git version
+
+ssh -i MSC-IIT-CC-Key-Pair.pem -L 8080:127.0.0.1:8080 ec2-user@35.77.15.78
+ssh -i MSC-IIT-CC-Key-Pair.pem -L 8080:127.0.0.1:8080 ec2-user@35.77.15.78
+
+
+ssh -i MiniKubeKeyPair.pem -L 8080:127.0.0.1:8080 ec2-user@35.77.15.78
+ssh -i MiniKubeKeyPair.pem -L 3001:127.0.0.1:3001 ec2-user@35.77.15.78
+
+
+minikube dashboard --url
+
+
+http://127.0.0.1:39339/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+
+export CR_PAT=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 ; echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
+
+
+docker tag evote-backend-userservice:latest ghcr.io/rajithafernando/evote-backend-userservice:latest
+
+
+jenkins Setup
+download plugin
+
+
+
+Create Kubernetes Credentials
+
+provide certificate data
+
+
+Download Kubernetes Continuous Plugin 1.0 version:
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXJtWUpsaVhINkFUWGhqTVdnNmNPZ3k1RGl3UXxBQ3Jtc0trX2VnXzVDSmJVYWprQXNMUHc3VmQtOXJoN0hmMm1NQ2NKaW5MbEJyMDd6VmY2WTQ0UW4zVHY0T0kzT0gxSmxjalRHWjRYUE9Ic09KdW5GMnNPMm5vb0FPdDMweklnYzFPQ0Q1NmcwZzhoRWw5NzkxVQ&q=https://updates.jenkins.io/download/plugins/kubernetes-cd/1.0.0/kubernetes-cd.hpi&v=XE_mAhxZpwU
+
+https://updates.jenkins.io/download/p...
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker build . --file Dockerfile --tag rajithafernando/evote-frontend-app
+docker build -t rajithafernando/evote-backend-userservice
+
+
+
+
+
+
+
+
+
+cd /var/lib/jenkins/workspace/cicd-pipeline-evote-backend-userservice
+
+kubectl apply -f deployment.yaml
+kubectl logs deployment.apps/evote-backend-userservice-deployment
+                    
+kubectl port-forward deployment/evote-backend-userservice-deployment 3001:3001
+
+
+ssh -i MiniKubeKeyPair.pem -L 8080:127.0.0.1:8080 ec2-user@35.77.15.78
+
+ssh -i MiniKubeKeyPair.pem -L 3001:127.0.0.1:3001 ec2-user@35.77.15.78
+
+
+
+
+
+cd /var/lib/jenkins/workspace/cicd-pipeline-evote-frontend-app
+
+
+
+kubectl apply -f deployment.yaml
+
+kubectl logs deployment.apps/evote-frontend-app-deployment
+
+
+kubectl port-forward deployment/evote-frontend-app-deployment 3000:3000
+
+ssh -i MiniKubeKeyPair.pem -L 3000:127.0.0.1:3000 ec2-user@35.77.15.78
+
+
+
+
+
+
+
+
+
+

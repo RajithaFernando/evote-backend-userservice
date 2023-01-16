@@ -1,11 +1,11 @@
 const { Client } = require('pg');
 
 const client = new Client({
-    "user": "kkrvcyfx",
-    "password": "XAME2FCMAiuYoCp7VD82ArxSJ-8lLFG8",
+    "user": "",
+    "password": "",
     "host": "ruby.db.elephantsql.com",
     "port": 5432,
-    "database": "kkrvcyfx"
+    "database": ""
 });
 
 client.connect().then(() =>
